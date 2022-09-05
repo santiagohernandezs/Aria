@@ -73,6 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Este proyecto se basa en la creación de una app capaz de generar una contraseña aleatoria y única para el usuario. Además, se le dispone al cliente con cuatro comodas opciones que afectarán a la contraseña que sea generada.
 
+Esto es un proyecto de código abierto, siénte libre de modificarlo a tu gusto.
+
 ## ¿Cómo desplegar la app?
 Fácil, puedes clonar este repositorio o simplemente descargarlo, una vez dentro del directorio ejectuta el comando `npm start`
 
@@ -86,3 +88,10 @@ Inica la aplicación en modo de desarrollo.\
 Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
 La página se refrescará automáticamente si detecta algún cambio.\
+
+### `npm run build`
+
+Crea la applicación en modo de producción en la carpeta `build`.\
+
+Esto hace que la aplición sea minificada e incluya mejoras en la optimización.\
+Puedes Ejeccutar este script si deseas desplegar la app en un servidor local, o alojarlo en un dominio.
