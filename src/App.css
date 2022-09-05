@@ -1,38 +1,139 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: inherit;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+h1{
+    font-size: 37px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.password-container{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
+
+.password{
+    width: 622px;
+    height: 90px;
+    background-color: #2B2B2B;
+    border-radius: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem
+}
+
+input[type="text"] {
+    height: 3rem;
+    width: 87%;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #2B2B2B;
+    border: none;
+    font-size: xx-large;
+    padding: 1rem;
+    color: white
+}
+
+input[type="text"]:focus{
+    outline: none;
+    background-color:#3E3E3E
+}
+
+.copy{
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    height: 2rem;
+    width: 2rem;
+    padding-right: 3rem;
+}
+
+.copy:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c5";
+    font-size: 30px;
+    color: #3CA1FE;
+    cursor: pointer
+}
+
+.settings{
+    width: 622px;
+    height: auto;
+    background-color: #2B2B2B;
+    border-radius: 13px;
+    padding: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.radio-counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14rem;
+}
+
+.radio-counter > span {
+    color: #3CA1FE;
+    font-size: xx-large;
+}
+
+.range{
+    padding:15px 0px;
+}
+
+.option{
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.default-checkbox{
+    height: 1rem;
+}
+
+.rs-checkbox{
+    transform: scale(2);
+}
+
+.default-label{
+    font-size: x-large;
+}
+
+.indicator{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.indicator-red{
+    color: rgb(241, 70, 70);
+}
+
+.indicator-green{
+    color: rgb(29, 255, 29);
+}
+
+.button{
+    background-color: #3CA1FE;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    color: #2B2B2B;
+    cursor: pointer
+}
+
+.panel{
+    height: auto;
 }
