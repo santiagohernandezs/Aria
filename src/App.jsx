@@ -24,11 +24,62 @@ import { Slider, Checkbox } from 'rsuite';
 function App () {
     const [value, setValue] = useState(5)
 
+    function validate () {
+        const options = {
+            IUC: false,
+            ILC: false,
+            IN: false,
+            IS: false
+        };
+
+        if (document.getElementById('IUC').checked) {
+            options.IUC = true
+        }
+        if (document.getElementById('ILC').checked) {
+            options.ILC = true
+        }
+        if (document.getElementById('IN').checked) {
+            options.IN = true
+        }
+        if (document.getElementById('IS').checked) {
+            options.IS = true
+        }
+
+        console.log(options)
+
+        let char = ''
+
+        if (options.IUC === true) {
+            char += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        }
+        if (options.ILC === true) {
+            char += 'abcdefghijklmnopqrstuvwxyz'
+        }
+        if (options.IN === true) {
+            char += '123456789'
+        }
+        if (options.IS === true) {
+            char += '!@#$%^&*()<>/?[]"{}:;.,~`-=+_'
+        }
+
+        console.log(char)
+        console.log(char.length)
+
+        let length = value
+        let password = ''
+
+        for (let i = 0, n = char.length; i < length; ++i) {
+            password += char.charAt(Math.floor(Math.random() * n))
+        }
+
+        console.log(password)
+    }
+
     return (
         <div className="App">
             <div className="password-container">
                 <div className="password">
-                    <input type="text" id='password' placeholder="Hello" value="123ywuehbd"/>
+                    <input type="text" id='password' placeholder="Hello"/>
                     <button className="copy" id="copy" onClick={() => { alert('Haz copiado tu contrasena') }}></button>
                 </div>
                 <div className="settings">
@@ -42,11 +93,11 @@ function App () {
                     <div className="options">
                         <div className="option">
                             <Checkbox id="IUC"/>
-                            <label className="default-label">Include Uppercase Letters</label>
+                            <label className="default-label">Include Capital Letters</label>
                         </div>
                         <div className="option">
                             <Checkbox id='ILC'/>
-                            <label className="default-label">Include Lowercase Letters</label>
+                            <label className="default-label">Include Tiny Letters</label>
                         </div>
                         <div className="option">
                             <Checkbox id='IN'/>
@@ -61,7 +112,7 @@ function App () {
                         <h2>STRENGTH</h2>
                         <h2 className={value < 9 ? 'indicator-red' : 'indicator-green'}>{ value < 9 ? 'LOW' : 'HIGH' }</h2>
                     </div>
-                    <button className="button">
+                    <button className="button" onClick={validate}>
                         <h2>GENERATE</h2>
                     </button>
                 </div>

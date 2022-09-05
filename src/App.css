@@ -24,7 +24,8 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem
+    padding: 1rem;
+    box-shadow: 57.4879px 22.8261px 16.9082px rgba(0, 0, 0, 0.01), 36.3527px 14.372px 16.0628px rgba(0, 0, 0, 0.06), 20.2899px 8.45411px 13.5266px rgba(0, 0, 0, 0.2), 9.29952px 3.38164px 10.1449px rgba(0, 0, 0, 0.34), 2.53623px 0.845411px 5.07246px rgba(0, 0, 0, 0.39), 0px 0px 0px rgba(0, 0, 0, 0.4);
 }
 
 input[type="text"] {
@@ -74,6 +75,7 @@ input[type="text"]:focus{
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    box-shadow: 57.4879px 22.8261px 16.9082px rgba(0, 0, 0, 0.01), 36.3527px 14.372px 16.0628px rgba(0, 0, 0, 0.06), 20.2899px 8.45411px 13.5266px rgba(0, 0, 0, 0.2), 9.29952px 3.38164px 10.1449px rgba(0, 0, 0, 0.34), 2.53623px 0.845411px 5.07246px rgba(0, 0, 0, 0.39), 0px 0px 0px rgba(0, 0, 0, 0.4);
 }
 
 .radio-counter{
