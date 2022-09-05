@@ -15,6 +15,8 @@ El Usario podrá generar una contraseña escogiendo cuatro parametros (Uno oblig
 - Incluye Números: Añade números a la contraseña.
 - Incluye Símbolos: Añande símbolos a la contraseña.
 
+Además el usuario contará conn un apartado donde podrá ver la contraseña generada y podrá copiarla.
+
 ## ¿Cómo desplegar la app?
 Fácil, puedes clonar este repositorio o simplemente descargarlo, una vez dentro del directorio ejectuta el comando `npm start`
 
