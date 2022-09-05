@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +67,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+
+# Generador de Contraseñas
+
+Este proyecto se basa en la creación de una app capaz de generar una contraseña aleatoria y única para el usuario. Además, se le dispone al cliente con cuatro comodas opciones que afectarán a la contraseña que sea generada.
+
+## ¿Cómo desplegar la app?
+Fácil, puedes clonar este repositorio o simplemente descargarlo, una vez dentro del directorio ejectuta el comando `npm start`
+
+# Scripts Disponibles
+
+Dentro del directorio de este proyecto podrás ejecutar:
+
+### `npm start`
+
+Inica la aplicación en modo de desarrollo.\
+Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
+
+La página se refrescará automáticamente si detecta algún cambio.\
