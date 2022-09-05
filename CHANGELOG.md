@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.2](https://github.com/santiagohernandezs/Aria/compare/v0.1.1...v0.1.2) (2022-09-05)
 
+### Docs
+
+* README update
+
 ### 0.1.1 (2022-09-05)
 
 
