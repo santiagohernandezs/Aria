@@ -12,24 +12,15 @@ function App () {
             IN: false,
             IS: false
         };
-
-        if (document.getElementById('IUC').checked) {
-            options.IUC = true
-        }
-        if (document.getElementById('ILC').checked) {
-            options.ILC = true
-        }
-        if (document.getElementById('IN').checked) {
-            options.IN = true
-        }
-        if (document.getElementById('IS').checked) {
-            options.IS = true
-        }
-
-        console.log(options)
-
+    
         let char = ''
-
+    
+        for (let i in options) {
+            if (document.getElementById(i).checked) {
+                options[i] = true;
+            }
+        }
+    
         if (options.IUC === true) {
             char += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         }
@@ -42,17 +33,14 @@ function App () {
         if (options.IS === true) {
             char += '!@#$%^&*()<>/?[]"{}:;.,~`-=+_'
         }
-
-        console.log(char)
-        console.log(char.length)
-
-        let length = value
+    
+        let length = 7
         let password = ''
-
+    
         for (let i = 0, n = char.length; i < length; ++i) {
             password += char.charAt(Math.floor(Math.random() * n))
         }
-
+    
         console.log(password)
     }
 
