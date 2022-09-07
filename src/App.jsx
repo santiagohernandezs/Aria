@@ -5,22 +5,24 @@ import { Slider, Checkbox } from 'rsuite';
 function App () {
     const [value, setValue] = useState(5)
 
-    function validate () {
+    function validate (value) {
         const options = {
             IUC: false,
             ILC: false,
             IN: false,
             IS: false
         };
-    
+
         let char = ''
-    
+
         for (let i in options) {
             if (document.getElementById(i).checked) {
                 options[i] = true;
             }
         }
-    
+
+        console.log(options)
+
         if (options.IUC === true) {
             char += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         }
@@ -33,14 +35,14 @@ function App () {
         if (options.IS === true) {
             char += '!@#$%^&*()<>/?[]"{}:;.,~`-=+_'
         }
-    
-        let length = 7
+
+        let length = value
         let password = ''
-    
+
         for (let i = 0, n = char.length; i < length; ++i) {
             password += char.charAt(Math.floor(Math.random() * n))
         }
-    
+
         console.log(password)
     }
 
