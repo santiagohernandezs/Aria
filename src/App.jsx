@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import { Slider, Checkbox } from 'rsuite';
+import { IoCopy } from 'react-icons/io5';
 
 function App () {
     const [values, setValues] = useState(5)
@@ -46,12 +47,25 @@ function App () {
         console.log(password)
     }
 
+    function copyText () {
+        var copyText = document.getElementById('password');
+
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyText.value);
+
+        alert('Contraseña copiada!');
+    }
+
     return (
         <div className="App">
             <div className="password-container">
                 <div className="password">
-                    <input type="text" id='password' readOnly placeholder="Hello"/>
-                    <button className="copy" id="copy" onClick={() => { alert('Haz copiado tu contrasena') }}></button>
+                    <input type="text" id='password' readOnly placeholder="P4$$w0Rd"/>
+                    <button className="copy" id="copy" onClick={copyText}>
+                        <IoCopy className='copyIcon'/>
+                    </button>
                 </div>
                 <div className="settings">
                     <div className="radio-counter">
@@ -59,7 +73,13 @@ function App () {
                         <span id="rangeValue">{values}</span>
                     </div>
                     <div className="range">
-                        <Slider min={4} max={15} step={1} def={5} onChange={values => { setValues(values) }} tooltip={false}/>
+                        <Slider
+                            min={4}
+                            max={15}
+                            step={1}
+                            def={5}
+                            onChange={values => { setValues(values) }}
+                            tooltip={false}/>
                     </div>
                     <div className="options">
                         <div className="option">
