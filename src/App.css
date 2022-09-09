@@ -50,18 +50,15 @@ input[type="text"]:focus{
     -webkit-appearance: none;
     border: none;
     background-color: transparent;
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 4rem;
     padding-right: 3rem;
 }
 
-.copy:before{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0c5";
-    font-size: 30px;
-    color: #3CA1FE;
-    cursor: pointer
+.copyIcon{
+    height: inherit;
+    width: inherit;
+    color: #3CA1FE
 }
 
 .settings{
@@ -93,6 +90,32 @@ input[type="text"]:focus{
 .range{
     padding:15px 0px;
 }
+
+.rs-slider-handle {
+    position: absolute;
+    top: -96%;
+    outline: none;
+}
+
+.rs-slider-handle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #3CA1FE;
+    border: 2px solid var(--rs-slider-thumb-border);
+    background-color: #fff;
+    background-color: var(--rs-slider-thumb-bg);
+    margin-left: -6px;
+    cursor: pointer;
+    /* stylelint-disable */
+    -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    /* stylelint-enable */
+  }
 
 .option{
     padding: 1rem;
