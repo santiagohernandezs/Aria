@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Slider, Checkbox } from 'rsuite';
 
 function App () {
-    const [value, setValue] = useState(5)
+    const [values, setValues] = useState(5)
 
-    function validate (value) {
+    function validate () {
         const options = {
             IUC: false,
             ILC: false,
@@ -13,7 +13,8 @@ function App () {
             IS: false
         };
 
-        let char = ''
+        let char = '';
+        let passlength = values
 
         for (let i in options) {
             if (document.getElementById(i).checked) {
@@ -21,27 +22,26 @@ function App () {
             }
         }
 
-        console.log(options)
+        let optionsValues = Object.values(options);
 
-        if (options.IUC === true) {
-            char += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        }
-        if (options.ILC === true) {
-            char += 'abcdefghijklmnopqrstuvwxyz'
-        }
-        if (options.IN === true) {
-            char += '123456789'
-        }
-        if (options.IS === true) {
-            char += '!@#$%^&*()<>/?[]"{}:;.,~`-=+_'
+        for (let i = 0; i < optionsValues.length; i++) {
+            if (optionsValues[i] === true) {
+                char += ['ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    'abcdefghijklmnopqrstuvwxyz',
+                    '123456789',
+                    '!@#$%^&*()<>/?[]"{}:;.,~`-=+_'].at(i)
+            }
         }
 
-        let length = value
         let password = ''
 
-        for (let i = 0, n = char.length; i < length; ++i) {
+        for (let i = 0, n = char.length; i < passlength; ++i) {
             password += char.charAt(Math.floor(Math.random() * n))
         }
+
+        let name = `${password}`
+
+        document.getElementById('password').value = name;
 
         console.log(password)
     }
@@ -50,16 +50,16 @@ function App () {
         <div className="App">
             <div className="password-container">
                 <div className="password">
-                    <input type="text" id='password' placeholder="Hello"/>
+                    <input type="text" id='password' readOnly placeholder="Hello"/>
                     <button className="copy" id="copy" onClick={() => { alert('Haz copiado tu contrasena') }}></button>
                 </div>
                 <div className="settings">
                     <div className="radio-counter">
                         <h1>Character Length</h1>
-                        <span id="rangeValue">{value}</span>
+                        <span id="rangeValue">{values}</span>
                     </div>
                     <div className="range">
-                        <Slider min={4} max={15} step={1} def={5} onChange={value => { setValue(value) }} tooltip={false}/>
+                        <Slider min={4} max={15} step={1} def={5} onChange={values => { setValues(values) }} tooltip={false}/>
                     </div>
                     <div className="options">
                         <div className="option">
@@ -81,7 +81,7 @@ function App () {
                     </div>
                     <div className="indicator">
                         <h2>STRENGTH</h2>
-                        <h2 className={value < 9 ? 'indicator-red' : 'indicator-green'}>{ value < 9 ? 'LOW' : 'HIGH' }</h2>
+                        <h2 className={values < 9 ? 'indicator-red' : 'indicator-green'}>{ values < 9 ? 'LOW' : 'HIGH' }</h2>
                     </div>
                     <button className="button" onClick={validate}>
                         <h2>GENERATE</h2>
