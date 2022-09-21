@@ -4,6 +4,8 @@ Este proyecto se basa en la creación de una app capaz de generar una contraseñ
 
 Esto es un proyecto de código abierto, siénte libre de modificarlo a tu gusto.
 
+Puedes acceder al proyecto mediante este link [https://password-generator-application.netlify.app/](https://password-generator-application.netlify.app/) o puedes seguir leyendo para enterarte de como instalar el repositorio y ejecutarlo localmente en tu computadora.
+
 ## Opciones de Genereación de Contraseña
 
 El Usario podrá generar una contraseña escogiendo cuatro parametros (Uno obligatorio y tres opcionales) los cuales determinaran el comportamiento de la contraseña generada.
